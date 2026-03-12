@@ -1,109 +1,64 @@
-<!doctype html>
-<html lang="sv">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Matchkort-generator</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Teko:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>GitHub Projects</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f8;
+      text-align: center;
+      margin: 0;
+      padding: 40px;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-decoration: none;
+      color: black;
+      width: 200px;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    .card h2 {
+      margin-top: 0;
+    }
+  </style>
 </head>
 <body>
-  <div class="wrap">
-    <header class="topbar">
-      <h1>Matchkort-generator</h1>
-      <p>Skapa en SoMe-bild för hemmamatcher på några sekunder.</p>
-    </header>
 
-    <main class="grid">
-      <section class="panel">
-        <h2>Matchinfo</h2>
+  <h1>Tillgängliga projekt</h1>
 
-        <div class="form">
-          <label>
-            Hemmalag
-            <input id="homeTeam" type="text" value="Säters IF FK" />
-          </label>
+  <div class="container">
+    <a class="card" href="match-card/index.html">
+      <h2>Matchkort</h2>
+      <p>Skapa en bild för hemmamatcher</p>
+    </a>
 
-          <label>
-            Bortalag
-            <input id="awayTeam" type="text" value="Dala-Järna IK" />
-          </label>
-
-          <div class="row">
-            <label>
-              Datum
-              <input id="date" type="date" />
-            </label>
-            <label>
-              Tid
-              <input id="time" type="time" value="19:00" />
-            </label>
-          </div>
-
-          <label>
-            Plats
-            <input id="venue" type="text" value="Säters IP" />
-          </label>
-
-          <div class="row">
-            <label>
-              Bortalogga (valfri)
-              <input id="awayLogo" type="file" accept="image/*" />
-            </label>
-            <label>
-              Bakgrund
-              <select id="bgSelect"></select>
-            </label>
-          </div>
-
-          <label>
-            Format
-            <select id="format">              
-              <option value="1080x1350" selected>Inlägg Facebook/Instagram (1080 x 1350)</option>
-              <option value="1080x1920">Story Facebook/Instagram (1080 x 1920)</option>
-              <option value="1920x1005">Facebook Evenemang (1920 x 1005)</option>
-            </select>
-          </label>
-
-          <div class="actions">
-            <button id="renderBtn" class="btn primary">Skapa bild</button>
-            <button id="downloadBtn" class="btn" disabled>Ladda ner PNG</button>
-          </div>
-
-        </br>
-
-          <h2>Valfritt: Importera matchdata</h2>
-
-            <label>
-              Välj CSV-fil
-              <input id="csvFile" type="file" accept=".csv,text/csv" />
-            </label>
-            
-            <button id="loadCsvBtn" class="btn">Läs CSV</button>
-          </br></br>
-            
-            <label>
-              Välj match
-              <select id="matchSelect" disabled>
-                <option value="">— Ladda CSV först —</option>
-              </select>
-            </label>
-
-        </div>
-      </section>
-
-      <section class="preview">
-        <h2>Förhandsvisning</h2>
-        <div class="canvasWrap">
-          <canvas id="card"></canvas>
-        </div>
-      </section>
-    </main>
+    <a class="card" href="schema-planerare/index.html">
+      <h2>Träningsschema</h2>
+      <p>Planera tränings- eller matchschema</p>
+    </a>
   </div>
 
-  <script src="app.js"></script>
 </body>
 </html>
