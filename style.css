@@ -1,0 +1,115 @@
+ :root{
+  --bg:#f6f8fb;
+  --card:#ffffff;
+  --text:#0b1220;
+  --muted:#5b657a;
+  --brand:#013888;
+  --shadow: 0 18px 45px rgba(9, 20, 40, .12);
+  --radius: 18px;
+}
+
+*{ box-sizing:border-box; }
+body{
+  margin:0;
+  font-family: Inter, system-ui;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.wrap{ max-width: 1100px; margin: 0 auto; padding: 28px 18px 42px; }
+
+.topbar{
+  background: linear-gradient(135deg, rgba(1,56,136,.08), rgba(1,56,136,.02));
+  border: 1px solid rgba(1,56,136,.12);
+  border-radius: var(--radius);
+  padding: 18px 18px;
+  margin-bottom: 18px;
+}
+.topbar h1{ margin:0 0 4px; font-size: 22px; }
+.topbar p{ margin:0; color:var(--muted); }
+
+.grid{
+  display:grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 18px;
+}
+@media (max-width: 920px){
+  .grid{ grid-template-columns: 1fr; }
+}
+
+.panel, .preview{
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(15, 20, 35, .06);
+  padding: 16px 16px;
+}
+
+h2{ margin: 0 0 12px; font-size: 16px; color: #111b2d; }
+
+.form label{
+  display:block;
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.form input, .form select{
+  width:100%;
+  margin-top: 6px;
+  padding: 10px 11px;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 20, 35, .12);
+  outline: none;
+  font-size: 14px;
+}
+
+.form input:focus, .form select:focus{
+  border-color: rgba(1,56,136,.45);
+  box-shadow: 0 0 0 3px rgba(1,56,136,.10);
+}
+
+.row{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.actions{
+  display:flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn{
+  height: 40px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(15, 20, 35, .12);
+  background: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn.primary{
+  background: var(--brand);
+  color: #fff;
+  border-color: transparent;
+}
+.btn:disabled{
+  opacity: .5;
+  cursor:not-allowed;
+}
+
+.canvasWrap{
+  background: linear-gradient(135deg, rgba(1,56,136,.08), rgba(1,56,136,.02));
+  border-radius: var(--radius);
+  padding: 14px;
+  border: 1px dashed rgba(1,56,136,.25);
+}
+canvas{
+  width: 100%;
+  height: auto;
+  display:block;
+  border-radius: 14px;
+  background: #fff;
+}
+.hint{ color: var(--muted); font-size: 12px; margin: 10px 0 0; }
