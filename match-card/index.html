@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matchkort-generator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Teko:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <h1>Matchkort-generator</h1>
+      <p>Skapa en SoMe-bild för hemmamatcher på några sekunder.</p>
+    </header>
+
+    <main class="grid">
+      <section class="panel">
+        <h2>Matchinfo</h2>
+
+        <div class="form">
+          <label>
+            Hemmalag
+            <input id="homeTeam" type="text" value="Säters IF FK" />
+          </label>
+
+          <label>
+            Bortalag
+            <input id="awayTeam" type="text" value="Dala-Järna IK" />
+          </label>
+
+          <div class="row">
+            <label>
+              Datum
+              <input id="date" type="date" />
+            </label>
+            <label>
+              Tid
+              <input id="time" type="time" value="19:00" />
+            </label>
+          </div>
+
+          <label>
+            Plats
+            <input id="venue" type="text" value="Säters IP" />
+          </label>
+
+          <div class="row">
+            <label>
+              Bortalogga (valfri)
+              <input id="awayLogo" type="file" accept="image/*" />
+            </label>
+            <label>
+              Bakgrund
+              <select id="bgSelect"></select>
+            </label>
+          </div>
+
+          <label>
+            Format
+            <select id="format">              
+              <option value="1080x1350" selected>Inlägg Facebook/Instagram (1080 x 1350)</option>
+              <option value="1080x1920">Story Facebook/Instagram (1080 x 1920)</option>
+              <option value="1920x1005">Facebook Evenemang (1920 x 1005)</option>
+            </select>
+          </label>
+
+          <div class="actions">
+            <button id="renderBtn" class="btn primary">Skapa bild</button>
+            <button id="downloadBtn" class="btn" disabled>Ladda ner PNG</button>
+          </div>
+
+        </br>
+
+          <h2>Valfritt: Importera matchdata</h2>
+
+            <label>
+              Välj CSV-fil
+              <input id="csvFile" type="file" accept=".csv,text/csv" />
+            </label>
+            
+            <button id="loadCsvBtn" class="btn">Läs CSV</button>
+          </br></br>
+            
+            <label>
+              Välj match
+              <select id="matchSelect" disabled>
+                <option value="">— Ladda CSV först —</option>
+              </select>
+            </label>
+
+        </div>
+      </section>
+
+      <section class="preview">
+        <h2>Förhandsvisning</h2>
+        <div class="canvasWrap">
+          <canvas id="card"></canvas>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
